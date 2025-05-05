@@ -35,7 +35,7 @@ const subsidiaries: SubsidiaryProps[] = [
     logo: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=150&h=150&fit=crop&auto=format",
   },
   {
-    name: "Liberty Hospitals",
+    name: "Jayasree Liberty Hospitals",
     description: "State-of-the-art healthcare facilities providing quality medical services.",
     color: "hospital",
     website: "#",
