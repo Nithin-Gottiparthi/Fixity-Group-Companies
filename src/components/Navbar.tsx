@@ -1,0 +1,73 @@
+
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+
+const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  return (
+    <nav className="bg-white shadow-sm py-4 px-4 md:px-8 sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        <Link to="/" className="flex items-center gap-2">
+          <div className="font-bold text-2xl text-fixity-primary">
+            FIXITY <span className="text-fixity-secondary">GROUP</span>
+          </div>
+        </Link>
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center space-x-8">
+          <NavLinks className="flex space-x-8" />
+          <Button asChild className="bg-fixity-primary hover:bg-fixity-primary/90">
+            <Link to="/contact">Contact Us</Link>
+          </Button>
+        </div>
+
+        {/* Mobile Navigation Button */}
+        <div className="md:hidden">
+          <button onClick={toggleMenu} className="text-fixity-primary">
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Navigation Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-white px-4 py-5 absolute w-full left-0 shadow-md animate-fade-in">
+          <NavLinks className="flex flex-col space-y-4" />
+          <div className="mt-6">
+            <Button asChild className="w-full bg-fixity-primary hover:bg-fixity-primary/90">
+              <Link to="/contact">Contact Us</Link>
+            </Button>
+          </div>
+        </div>
+      )}
+    </nav>
+  );
+};
+
+interface NavLinksProps {
+  className?: string;
+}
+
+const NavLinks = ({ className }: NavLinksProps) => (
+  <div className={cn("text-fixity-primary font-medium", className)}>
+    <Link to="/" className="hover:text-fixity-secondary transition-colors">
+      Home
+    </Link>
+    <Link to="/about" className="hover:text-fixity-secondary transition-colors">
+      About Us
+    </Link>
+    <Link to="/subsidiaries" className="hover:text-fixity-secondary transition-colors">
+      Subsidiaries
+    </Link>
+  </div>
+);
+
+export default Navbar;
