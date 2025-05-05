@@ -131,6 +131,20 @@ const subsidiaries = [
 
 const Subsidiaries = () => {
   const [activeTab, setActiveTab] = useState("fixity-technologies");
+  
+  // Get active subsidiary color
+  const getActiveColor = (id: string) => {
+    const subsidiary = subsidiaries.find(sub => sub.id === id);
+    switch(subsidiary?.color) {
+      case "tech": return "#f4af1b";
+      case "edx": return "#181d4c";
+      case "learnpad": return "#FF6701";
+      case "green": return "#69AF07";
+      case "hospital": return "#406cb3";
+      case "vidyapeetam": return "#FFA500";
+      default: return "#f4af1b";
+    }
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -158,18 +172,35 @@ const Subsidiaries = () => {
               className="space-y-8"
             >
               <TabsList className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 bg-transparent h-auto">
-                {subsidiaries.map((subsidiary) => (
-                  <TabsTrigger
-                    key={subsidiary.id}
-                    value={subsidiary.id}
-                    className={`
-                      px-4 py-3 text-sm font-medium border-b-2 data-[state=active]:border-fixity-${subsidiary.color}
-                      data-[state=active]:text-fixity-${subsidiary.color} data-[state=active]:shadow-none
-                    `}
-                  >
-                    {subsidiary.name}
-                  </TabsTrigger>
-                ))}
+                {subsidiaries.map((subsidiary) => {
+                  const isActive = activeTab === subsidiary.id;
+                  const activeColor = getActiveColor(subsidiary.id);
+                  
+                  return (
+                    <TabsTrigger
+                      key={subsidiary.id}
+                      value={subsidiary.id}
+                      className={`
+                        px-4 py-3 text-sm font-medium relative transition-all duration-300 ease-in-out
+                        ${isActive ? `font-bold` : ''}
+                      `}
+                      style={{
+                        borderBottom: isActive ? `2px solid ${activeColor}` : '2px solid transparent',
+                        backgroundColor: isActive ? `${activeColor}10` : 'transparent',
+                        color: isActive ? activeColor : 'inherit',
+                        boxShadow: isActive ? `0 4px 12px -2px ${activeColor}30` : 'none',
+                      }}
+                    >
+                      {subsidiary.name}
+                      {isActive && (
+                        <span 
+                          className="absolute inset-0 rounded opacity-10 transition-opacity duration-300"
+                          style={{ backgroundColor: activeColor }}
+                        />
+                      )}
+                    </TabsTrigger>
+                  );
+                })}
               </TabsList>
               
               {subsidiaries.map((subsidiary) => (
