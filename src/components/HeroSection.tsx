@@ -22,7 +22,7 @@ const HeroSection = () => {
             healthcare, and sustainability under one visionary umbrella.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Button asChild className="bg-fixity-secondary hover:bg-fixity-secondary/90 text-white">
+            <Button asChild className="bg-fixity-secondary hover:bg-fixity-secondary/90 text-fixity-primary font-medium">
               <Link to="/subsidiaries">
                 Explore Our Companies
                 <ArrowRight className="ml-2 h-4 w-4" />

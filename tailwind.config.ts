@@ -64,8 +64,8 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				fixity: {
-					primary: "#0A2342",
-					secondary: "#2CA3AB",
+					primary: "#181D4C",
+					secondary: "#F4AF1B",
 					tech: "#4056A1",
 					edx: "#EFE2BA",
 					learnpad: "#C5CBE3",
