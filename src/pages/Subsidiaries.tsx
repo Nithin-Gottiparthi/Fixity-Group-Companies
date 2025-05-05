@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -171,7 +170,7 @@ const Subsidiaries = () => {
               onValueChange={setActiveTab}
               className="space-y-8"
             >
-              <TabsList className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 bg-transparent h-auto">
+              <TabsList className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 bg-transparent h-auto w-full">
                 {subsidiaries.map((subsidiary) => {
                   const isActive = activeTab === subsidiary.id;
                   const activeColor = getActiveColor(subsidiary.id);
@@ -181,7 +180,8 @@ const Subsidiaries = () => {
                       key={subsidiary.id}
                       value={subsidiary.id}
                       className={`
-                        px-4 py-3 text-sm font-medium relative transition-all duration-300 ease-in-out
+                        px-2 py-3 text-sm font-medium relative transition-all duration-300 ease-in-out
+                        min-h-[64px] flex flex-col hyphens-auto
                         ${isActive ? `font-bold` : ''}
                       `}
                       style={{
@@ -191,7 +191,7 @@ const Subsidiaries = () => {
                         boxShadow: isActive ? `0 4px 12px -2px ${activeColor}30` : 'none',
                       }}
                     >
-                      {subsidiary.name}
+                      <span className="text-center w-full">{subsidiary.name}</span>
                       {isActive && (
                         <span 
                           className="absolute inset-0 rounded opacity-10 transition-opacity duration-300"
