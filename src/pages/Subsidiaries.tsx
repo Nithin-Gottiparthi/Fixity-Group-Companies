@@ -88,10 +88,10 @@ const subsidiaries = [
   },
   {
     id: "liberty-hospitals",
-    name: "Liberty Hospitals",
+    name: "Jayasree Liberty Hospitals",
     color: "hospital",
     shortDesc: "State-of-the-art healthcare facilities providing quality medical services.",
-    longDesc: "Liberty Hospitals is committed to providing exceptional healthcare services with compassion and expertise. Our network of modern medical facilities offers comprehensive care across multiple specialties. With a patient-centered approach and investment in the latest medical technologies, we strive to improve healthcare outcomes and enhance the quality of life for our community.",
+    longDesc: "Jayasree Liberty Hospitals is committed to providing exceptional healthcare services with compassion and expertise. Our network of modern medical facilities offers comprehensive care across multiple specialties. With a patient-centered approach and investment in the latest medical technologies, we strive to improve healthcare outcomes and enhance the quality of life for our community.",
     features: [
       "State-of-the-art Medical Facilities",
       "Multi-specialty Healthcare Services",
