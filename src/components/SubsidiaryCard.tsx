@@ -1,5 +1,5 @@
 
-import { Button } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { ArrowRight, ExternalLink } from "lucide-react";
@@ -65,8 +65,8 @@ const SubsidiaryCard = ({ name, description, color, website, logo }: SubsidiaryP
         </a>
       </CardFooter>
 
-      {/* Add custom hover styles using inline style for the box-shadow */}
-      <style jsx>{`
+      {/* Add custom hover styles as inline styles */}
+      <style>{`
         .card-${color}:hover {
           box-shadow: 0 10px 25px -5px ${hoverColor}40;
         }
