@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
@@ -12,36 +11,42 @@ const subsidiaries: SubsidiaryProps[] = [
     description: "Innovative technology solutions and IT services for businesses across industries.",
     color: "tech",
     website: "#",
+    logo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=150&h=150&fit=crop&auto=format",
   },
   {
     name: "Fixity EDX",
     description: "Digital education platform offering advanced learning experiences and resources.",
     color: "edx",
     website: "#",
+    logo: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=150&h=150&fit=crop&auto=format",
   },
   {
     name: "Fixity Learnpad",
     description: "Interactive learning tools and platforms for students and educational institutions.",
     color: "learnpad",
     website: "#",
+    logo: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=150&h=150&fit=crop&auto=format",
   },
   {
     name: "Fixity Green",
     description: "Sustainable solutions and eco-friendly initiatives for a greener future.",
     color: "green",
     website: "#",
+    logo: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=150&h=150&fit=crop&auto=format",
   },
   {
     name: "Liberty Hospitals",
     description: "State-of-the-art healthcare facilities providing quality medical services.",
     color: "hospital",
     website: "#",
+    logo: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=150&h=150&fit=crop&auto=format",
   },
   {
     name: "Shri Dhanvantri Vidyapeetam",
     description: "Educational institution dedicated to traditional and modern learning methodologies.",
     color: "vidyapeetam",
     website: "#",
+    logo: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=150&h=150&fit=crop&auto=format",
   },
 ];
 
@@ -101,7 +106,9 @@ const Index = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {subsidiaries.map((subsidiary) => (
-                <SubsidiaryCard key={subsidiary.name} {...subsidiary} />
+                <div key={subsidiary.name} className={`card-${subsidiary.color} transform transition-all duration-300 hover:-translate-y-1`}>
+                  <SubsidiaryCard {...subsidiary} />
+                </div>
               ))}
             </div>
 
