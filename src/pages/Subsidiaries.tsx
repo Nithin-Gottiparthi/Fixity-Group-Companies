@@ -300,7 +300,8 @@ const Subsidiaries = () => {
                             
                             <Button 
                               asChild 
-                              className={`bg-fixity-${subsidiary.color} hover:bg-fixity-${subsidiary.color}/90 w-full transition-all`}
+                              variant="outline" 
+                              className={`border-fixity-${subsidiary.color} text-fixity-${subsidiary.color} hover:bg-fixity-${subsidiary.color}/5 w-full transition-all`}
                               style={{
                                 transition: "box-shadow 0.3s ease-in-out",
                               }}
