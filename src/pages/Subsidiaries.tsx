@@ -257,7 +257,7 @@ const Subsidiaries = () => {
                     
                     {/* Right column with image */}
                     <div className="lg:w-1/3">
-                      <div className={`bg-fixity-${subsidiary.color}/10 p-6 rounded-xl h-full`}>
+                      {/* <div className={`bg-fixity-${subsidiary.color}/10 p-6 rounded-xl h-full`}> */}
                         <div className={`aspect-square bg-fixity-${subsidiary.color}/20 rounded-lg mb-6 flex items-center justify-center overflow-hidden`}>
                           {subsidiary.logo ? (
                             <img 
@@ -290,7 +290,7 @@ const Subsidiaries = () => {
                                 className="group"
                               >
                                 Contact {subsidiary.name}
-                                <style jsx>{`
+                                <style>{`
                                   .group:hover {
                                     box-shadow: 0 0 15px -5px ${getActiveColor(subsidiary.id)}70;
                                   }
@@ -312,7 +312,7 @@ const Subsidiaries = () => {
                                 className="flex items-center justify-center group"
                               >
                                 Visit Website <ExternalLink className="ml-1.5 h-4 w-4" />
-                                <style jsx>{`
+                                <style>{`
                                   .group:hover {
                                     box-shadow: 0 0 15px -5px ${getActiveColor(subsidiary.id)};
                                   }
@@ -321,7 +321,7 @@ const Subsidiaries = () => {
                             </Button>
                           </div>
                         </div>
-                      </div>
+                      {/* </div> */}
                     </div>
                   </div>
                 </TabsContent>

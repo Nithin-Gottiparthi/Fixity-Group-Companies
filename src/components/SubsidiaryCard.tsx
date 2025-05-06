@@ -58,7 +58,7 @@ const SubsidiaryCard = ({ name, description, color, website, logo }: SubsidiaryP
           href={website} 
           target="_blank" 
           rel="noopener noreferrer" 
-          className={`flex items-center text-sm font-medium text-fixity-${color} hover:underline group-hover:text-opacity-90`}
+          className={`flex items-center text-sm font-medium text-fixity-${color} hover:underline group-hover:text`}
         >
           Visit Website <ExternalLink className="ml-1 h-4 w-4" />
         </a>
