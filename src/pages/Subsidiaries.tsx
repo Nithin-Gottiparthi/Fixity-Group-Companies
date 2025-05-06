@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -189,7 +188,7 @@ const Subsidiaries = () => {
                       value={subsidiary.id}
                       className={`
                         px-2 py-3 text-sm font-medium relative transition-all duration-300 ease-in-out
-                        min-h-[84px] flex flex-col hyphens-auto
+                        min-h-[60px] flex flex-col hyphens-auto
                         ${isActive ? `font-bold` : ''}
                       `}
                       style={{
@@ -199,15 +198,6 @@ const Subsidiaries = () => {
                         boxShadow: isActive ? `0 4px 12px -2px ${activeColor}30` : 'none',
                       }}
                     >
-                      {subsidiary.logo && (
-                        <div className="mb-1 flex justify-center">
-                          <img 
-                            src={subsidiary.logo} 
-                            alt={`${subsidiary.name} logo`} 
-                            className="h-10 w-10 object-cover rounded-md"
-                          />
-                        </div>
-                      )}
                       <span className="text-center w-full text-xs sm:text-sm">{subsidiary.name}</span>
                       {isActive && (
                         <span 
@@ -286,22 +276,47 @@ const Subsidiaries = () => {
                           <p className="text-gray-600">
                             Interested in learning more about {subsidiary.name} or discussing potential collaboration?
                           </p>
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <Button asChild variant="outline" className={`border-fixity-${subsidiary.color} text-fixity-${subsidiary.color} hover:bg-fixity-${subsidiary.color}/5 w-full transition-all`}
+                          <div className="flex flex-col space-y-4">
+                            <Button 
+                              asChild 
+                              variant="outline" 
+                              className={`border-fixity-${subsidiary.color} text-fixity-${subsidiary.color} hover:bg-fixity-${subsidiary.color}/5 w-full transition-all`}
                               style={{
-                                boxShadow: `0 0 15px -5px ${getActiveColor(subsidiary.id)}70`
+                                transition: "box-shadow 0.3s ease-in-out",
                               }}
                             >
-                              <a href="/contact">Contact {subsidiary.name}</a>
+                              <a 
+                                href="/contact" 
+                                className="group"
+                              >
+                                Contact {subsidiary.name}
+                                <style jsx>{`
+                                  .group:hover {
+                                    box-shadow: 0 0 15px -5px ${getActiveColor(subsidiary.id)}70;
+                                  }
+                                `}</style>
+                              </a>
                             </Button>
                             
-                            <Button asChild className={`bg-fixity-${subsidiary.color} hover:bg-fixity-${subsidiary.color}/90 w-full transition-all`}
+                            <Button 
+                              asChild 
+                              className={`bg-fixity-${subsidiary.color} hover:bg-fixity-${subsidiary.color}/90 w-full transition-all`}
                               style={{
-                                boxShadow: `0 0 15px -5px ${getActiveColor(subsidiary.id)}`
+                                transition: "box-shadow 0.3s ease-in-out",
                               }}
                             >
-                              <a href={subsidiary.website} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                              <a 
+                                href={subsidiary.website} 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="flex items-center justify-center group"
+                              >
                                 Visit Website <ExternalLink className="ml-1.5 h-4 w-4" />
+                                <style jsx>{`
+                                  .group:hover {
+                                    box-shadow: 0 0 15px -5px ${getActiveColor(subsidiary.id)};
+                                  }
+                                `}</style>
                               </a>
                             </Button>
                           </div>

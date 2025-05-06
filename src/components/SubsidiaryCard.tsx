@@ -1,7 +1,6 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { ArrowRight, ExternalLink } from "lucide-react";
 
 export interface SubsidiaryProps {
@@ -68,9 +67,8 @@ const SubsidiaryCard = ({ name, description, color, website, logo }: SubsidiaryP
           asChild 
           size="sm" 
           variant="outline"
-          className={`border-fixity-${color} text-fixity-${color} hover:bg-fixity-${color}/5`}
+          className={`border-fixity-${color} text-fixity-${color} hover:bg-fixity-${color}/5 btn-hover-${color}`}
           style={{ 
-            boxShadow: `0 0 10px -5px ${hoverColor}70`,
             transition: "all 0.3s ease"
           }}
         >
@@ -78,10 +76,14 @@ const SubsidiaryCard = ({ name, description, color, website, logo }: SubsidiaryP
         </Button>
       </CardFooter>
 
-      {/* Add custom hover styles as inline styles */}
+      {/* Add hover-specific styles as inline styles */}
       <style>{`
         .card-${color}:hover {
           box-shadow: 0 10px 25px -5px ${hoverColor}40;
+        }
+        
+        .btn-hover-${color}:hover {
+          box-shadow: 0 0 10px -5px ${hoverColor}70;
         }
       `}</style>
     </Card>
