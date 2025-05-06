@@ -39,7 +39,9 @@ const SubsidiaryCard = ({ name, description, color, website, logo }: SubsidiaryP
       <CardHeader className="pb-2">
         <div className="flex items-start gap-4">
           {logo ? (
-            <img src={logo} alt={`${name} logo`} className="w-12 h-12 object-contain rounded-md" />
+            <div className="w-12 h-12 overflow-hidden rounded-md flex items-center justify-center bg-white">
+              <img src={logo} alt={`${name} logo`} className="w-full h-full object-contain" />
+            </div>
           ) : (
             <div className={`w-12 h-12 rounded-md bg-fixity-${color} flex items-center justify-center text-white text-lg font-bold`}>
               {defaultLogo}
@@ -76,7 +78,6 @@ const SubsidiaryCard = ({ name, description, color, website, logo }: SubsidiaryP
         </Button>
       </CardFooter>
 
-      {/* Add hover-specific styles as inline styles */}
       <style>{`
         .card-${color}:hover {
           box-shadow: 0 10px 25px -5px ${hoverColor}40;

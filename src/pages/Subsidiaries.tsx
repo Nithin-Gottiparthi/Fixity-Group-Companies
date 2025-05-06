@@ -263,7 +263,7 @@ const Subsidiaries = () => {
                             <img 
                               src={subsidiary.logo} 
                               alt={`${subsidiary.name} logo`}
-                              className="w-full h-full object-cover"
+                              className="w-full h-full object-contain"
                             />
                           ) : (
                             <span className={`text-5xl font-bold text-fixity-${subsidiary.color}/30`}>
@@ -290,11 +290,11 @@ const Subsidiaries = () => {
                                 className="group"
                               >
                                 Contact {subsidiary.name}
-                                <style>{`
-                                  .group:hover {
+                                <style>
+                                  {`.group:hover {
                                     box-shadow: 0 0 15px -5px ${getActiveColor(subsidiary.id)}70;
-                                  }
-                                `}</style>
+                                  }`}
+                                </style>
                               </a>
                             </Button>
                             
@@ -313,11 +313,11 @@ const Subsidiaries = () => {
                                 className="flex items-center justify-center group"
                               >
                                 Visit Website <ExternalLink className="ml-1.5 h-4 w-4" />
-                                <style>{`
-                                  .group:hover {
+                                <style>
+                                  {`.group:hover {
                                     box-shadow: 0 0 15px -5px ${getActiveColor(subsidiary.id)};
-                                  }
-                                `}</style>
+                                  }`}
+                                </style>
                               </a>
                             </Button>
                           </div>
