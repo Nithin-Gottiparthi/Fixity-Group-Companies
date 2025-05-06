@@ -43,9 +43,9 @@ const About = () => {
                 </p>
               </div>
               <div className="w-full md:w-1/2">
-                <div className="aspect-video bg-gradient-to-br from-gray-200 to-gray-100 rounded-xl flex items-center justify-center">
+                <div className="aspect-video bg-gradient-to-br  to-gray-100 rounded-xl flex items-center justify-center">
                   {/* Placeholder for company timeline image */}
-                  <div className="text-2xl font-bold text-fixity-primary/20">COMPANY TIMELINE</div>
+                  <img src="/images/timeline.png" alt="fixity timeline" />
                 </div>
               </div>
             </div>
