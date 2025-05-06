@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const About = () => {
   return (
@@ -173,18 +174,42 @@ const About = () => {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[1, 2, 3, 4, 5, 6].map((index) => (
-                <div key={index} className="bg-white rounded-xl overflow-hidden shadow-sm">
-                  <div className="aspect-[4/3] bg-gray-200"></div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-fixity-primary">Executive Name</h3>
-                    <p className="text-fixity-secondary mb-2">Position Title</p>
-                    <p className="text-gray-600 text-sm">
-                      Brief description about the executive's experience, expertise, and role within the Fixity Group.
-                    </p>
-                  </div>
-                </div>
-              ))}
+              <LeadershipCard 
+                name="Dr. Rajesh Kumar"
+                position="Chief Executive Officer"
+                description="With over 20 years in technology leadership, Dr. Kumar drives our strategic vision and oversees the entire Fixity Group ecosystem."
+                imageUrl="/images/ceo.png"
+              />
+              <LeadershipCard 
+                name="Dr. Jayasree Menon"
+                position="Chief Innovation Officer"
+                description="Leading our R&D initiatives across all subsidiaries, Dr. Menon focuses on transformative technologies and collaborative innovation."
+                imageUrl="/images/jayasree.jpg"
+              />
+              <LeadershipCard 
+                name="Sarah Williams"
+                position="Chief Financial Officer"
+                description="Bringing extensive experience in corporate finance, Sarah manages our financial strategy and ensures sustainable growth across all businesses."
+                imageUrl="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+              />
+              <LeadershipCard 
+                name="Michael Chen"
+                position="Chief Technology Officer"
+                description="Michael leads our technology initiatives, driving digital transformation and ensuring technological excellence across our subsidiaries."
+                imageUrl="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+              />
+              <LeadershipCard 
+                name="Dr. Priya Shah"
+                position="Director of Healthcare"
+                description="Overseeing our healthcare subsidiaries, Dr. Shah brings medical expertise and a passion for improving healthcare accessibility and quality."
+                imageUrl="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+              />
+              <LeadershipCard 
+                name="Dr. Aarav Patel"
+                position="Director of Education"
+                description="An education innovator with a focus on blending traditional wisdom with modern teaching methods for our education subsidiaries."
+                imageUrl="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+              />
             </div>
           </div>
         </section>
@@ -237,6 +262,35 @@ const ValueCard = ({ title, description }) => (
   <div className="bg-white/10 p-6 rounded-xl">
     <h3 className="text-xl font-bold mb-3">{title}</h3>
     <p className="text-gray-200">{description}</p>
+  </div>
+);
+
+const LeadershipCard = ({ name, position, description, imageUrl }) => (
+  <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+    <div className="aspect-[4/3] relative">
+      {imageUrl ? (
+        <img 
+          src={imageUrl} 
+          alt={`${name}, ${position}`} 
+          className="w-full h-full object-cover object-center"
+        />
+      ) : (
+        <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+          <Avatar className="w-24 h-24">
+            <AvatarFallback className="text-4xl font-bold text-fixity-primary bg-fixity-secondary/20">
+              {name.split(' ').map(n => n[0]).join('')}
+            </AvatarFallback>
+          </Avatar>
+        </div>
+      )}
+    </div>
+    <div className="p-6">
+      <h3 className="text-xl font-bold text-fixity-primary">{name}</h3>
+      <p className="text-fixity-secondary mb-2">{position}</p>
+      <p className="text-gray-600 text-sm">
+        {description}
+      </p>
+    </div>
   </div>
 );
 
