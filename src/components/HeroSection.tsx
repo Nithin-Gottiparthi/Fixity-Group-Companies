@@ -12,8 +12,8 @@ const HeroSection = () => {
         <div className="absolute left-1/2 -top-24 w-96 h-96 rounded-full bg-fixity-secondary/5 blur-3xl"></div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-        <div className="max-w-3xl">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between">
+        <div className="max-w-3xl md:mr-8">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             Unifying Excellence Across Industries
           </h1>
@@ -31,6 +31,19 @@ const HeroSection = () => {
             <Button asChild variant="outline" className="bg-transparent border-white text-white hover:bg-white/10">
               <Link to="/about">Learn More About Us</Link>
             </Button>
+          </div>
+        </div>
+        
+        <div className="mt-10 md:mt-0 md:w-2/5">
+          <div className="relative">
+            <img
+              src="/images/fixity-group-lyt.png"
+              alt="Fixity Group Companies"
+              className="rounded-lg shadow-2xl object-cover w-full h-auto"
+            />
+            <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-fixity-secondary rounded-full flex items-center justify-center">
+              <span className="text-fixity-primary font-bold">2025</span>
+            </div>
           </div>
         </div>
       </div>

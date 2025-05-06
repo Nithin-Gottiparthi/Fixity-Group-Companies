@@ -1,12 +1,13 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -20,16 +21,14 @@ const Navbar = () => {
             <img
               src="/images/Fixity Group.jpg"
               alt="Fixity Group"
-              style={{ width: "85px", height: "55px" }}
-
+              className="h-14 w-auto object-contain"
             />
-            {/* FIXITY <span className="text-fixity-secondary">GROUP</span> */}
           </div>
         </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          <NavLinks className="flex space-x-8" />
+          <NavLinks currentPath={location.pathname} className="flex space-x-8" />
           <Button asChild className="bg-fixity-primary hover:bg-fixity-primary/90">
             <Link to="/contact">Contact Us</Link>
           </Button>
@@ -46,7 +45,7 @@ const Navbar = () => {
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
         <div className="md:hidden bg-white px-4 py-5 absolute w-full left-0 shadow-md animate-fade-in">
-          <NavLinks className="flex flex-col space-y-4" />
+          <NavLinks currentPath={location.pathname} className="flex flex-col space-y-4" />
           <div className="mt-6">
             <Button asChild className="w-full bg-fixity-primary hover:bg-fixity-primary/90">
               <Link to="/contact">Contact Us</Link>
@@ -60,17 +59,36 @@ const Navbar = () => {
 
 interface NavLinksProps {
   className?: string;
+  currentPath: string;
 }
 
-const NavLinks = ({ className }: NavLinksProps) => (
+const NavLinks = ({ className, currentPath }: NavLinksProps) => (
   <div className={cn("text-fixity-primary font-medium", className)}>
-    <Link to="/" className="hover:text-fixity-secondary transition-colors">
+    <Link 
+      to="/" 
+      className={cn(
+        "hover:text-fixity-secondary transition-colors",
+        currentPath === "/" && "text-fixity-secondary font-bold"
+      )}
+    >
       Home
     </Link>
-    <Link to="/about" className="hover:text-fixity-secondary transition-colors">
+    <Link 
+      to="/about" 
+      className={cn(
+        "hover:text-fixity-secondary transition-colors",
+        currentPath === "/about" && "text-fixity-secondary font-bold"
+      )}
+    >
       About Us
     </Link>
-    <Link to="/subsidiaries" className="hover:text-fixity-secondary transition-colors">
+    <Link 
+      to="/subsidiaries" 
+      className={cn(
+        "hover:text-fixity-secondary transition-colors",
+        currentPath === "/subsidiaries" && "text-fixity-secondary font-bold"
+      )}
+    >
       Our Subsidiaries
     </Link>
   </div>
