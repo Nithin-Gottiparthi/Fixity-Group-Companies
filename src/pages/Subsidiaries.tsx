@@ -1,8 +1,10 @@
+
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ExternalLink } from "lucide-react";
 
 // Define subsidiary data
 const subsidiaries = [
@@ -24,7 +26,8 @@ const subsidiaries = [
       "Developed a custom ERP solution for a manufacturing company increasing efficiency by 25%",
       "Implemented cybersecurity framework for healthcare provider protecting sensitive patient data"
     ],
-    website: "https://fixitytech.com"
+    website: "https://fixitytech.com",
+    logo: "/images/Fixity-Tech.jpg"
   },
   {
     id: "fixity-edx",
@@ -44,7 +47,8 @@ const subsidiaries = [
       "Developed custom corporate training platform reducing training time by 40%",
       "Created adaptive learning system improving student performance by 28%"
     ],
-    website: "https://fixityedx.com"
+    website: "https://fixityedx.com",
+    logo: "/images/Fixityedx.jpg"
   },
   {
     id: "fixity-learnpad",
@@ -64,7 +68,8 @@ const subsidiaries = [
       "Developed language learning app with 2 million active users",
       "Created special education tools improving engagement for students with diverse learning needs"
     ],
-    website: "https://fixitylearn.com"
+    website: "https://fixitylearn.com",
+    logo: "/images/Fixity-Learn.jpg"
   },
   {
     id: "fixity-green",
@@ -84,7 +89,8 @@ const subsidiaries = [
       "Designed waste management system for municipality reducing landfill waste by 60%",
       "Provided green building consultation for corporate headquarters achieving LEED Platinum certification"
     ],
-    website: "https://fixitygreen.com"
+    website: "https://fixitygreen.com",
+    logo: "/images/fixity-green.png"
   },
   {
     id: "liberty-hospitals",
@@ -104,7 +110,8 @@ const subsidiaries = [
       "Implemented AI-assisted diagnostic system improving early detection rates by 40%",
       "Created integrated patient care system reducing readmission rates by 25%"
     ],
-    website: "https://jslibertyhospitals.com"
+    website: "https://jslibertyhospitals.com",
+    logo: "/images/jayasree.jpg"
   },
   {
     id: "shri-dhanvantri-vidyapeetam",
@@ -124,7 +131,8 @@ const subsidiaries = [
       "Conducted research leading to 4 patented herbal formulations",
       "Created innovative curriculum integrating traditional medicine with modern healthcare practices"
     ],
-    website: "#"
+    website: "#",
+    logo: "/images/shri-danvantri.jpeg"
   }
 ];
 
@@ -181,7 +189,7 @@ const Subsidiaries = () => {
                       value={subsidiary.id}
                       className={`
                         px-2 py-3 text-sm font-medium relative transition-all duration-300 ease-in-out
-                        min-h-[64px] flex flex-col hyphens-auto
+                        min-h-[84px] flex flex-col hyphens-auto
                         ${isActive ? `font-bold` : ''}
                       `}
                       style={{
@@ -191,7 +199,16 @@ const Subsidiaries = () => {
                         boxShadow: isActive ? `0 4px 12px -2px ${activeColor}30` : 'none',
                       }}
                     >
-                      <span className="text-center w-full">{subsidiary.name}</span>
+                      {subsidiary.logo && (
+                        <div className="mb-1 flex justify-center">
+                          <img 
+                            src={subsidiary.logo} 
+                            alt={`${subsidiary.name} logo`} 
+                            className="h-10 w-10 object-cover rounded-md"
+                          />
+                        </div>
+                      )}
+                      <span className="text-center w-full text-xs sm:text-sm">{subsidiary.name}</span>
                       {isActive && (
                         <span 
                           className="absolute inset-0 rounded opacity-10 transition-opacity duration-300"
@@ -251,19 +268,43 @@ const Subsidiaries = () => {
                     {/* Right column with image */}
                     <div className="lg:w-1/3">
                       <div className={`bg-fixity-${subsidiary.color}/10 p-6 rounded-xl h-full`}>
-                        <div className={`aspect-square bg-fixity-${subsidiary.color}/20 rounded-lg mb-6 flex items-center justify-center`}>
-                          <span className={`text-5xl font-bold text-fixity-${subsidiary.color}/30`}>
-                            {subsidiary.name.charAt(0)}
-                          </span>
+                        <div className={`aspect-square bg-fixity-${subsidiary.color}/20 rounded-lg mb-6 flex items-center justify-center overflow-hidden`}>
+                          {subsidiary.logo ? (
+                            <img 
+                              src={subsidiary.logo} 
+                              alt={`${subsidiary.name} logo`}
+                              className="w-full h-full object-cover"
+                            />
+                          ) : (
+                            <span className={`text-5xl font-bold text-fixity-${subsidiary.color}/30`}>
+                              {subsidiary.name.charAt(0)}
+                            </span>
+                          )}
                         </div>
                         <div className="space-y-4">
                           <h3 className="text-xl font-bold text-fixity-primary">Connect With Us</h3>
                           <p className="text-gray-600">
                             Interested in learning more about {subsidiary.name} or discussing potential collaboration?
                           </p>
-                          <Button asChild variant="outline" className={`border-fixity-${subsidiary.color} text-fixity-${subsidiary.color} hover:bg-fixity-${subsidiary.color}/5 w-full`}>
-                            <a href="/contact">Contact {subsidiary.name}</a>
-                          </Button>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <Button asChild variant="outline" className={`border-fixity-${subsidiary.color} text-fixity-${subsidiary.color} hover:bg-fixity-${subsidiary.color}/5 w-full transition-all`}
+                              style={{
+                                boxShadow: `0 0 15px -5px ${getActiveColor(subsidiary.id)}70`
+                              }}
+                            >
+                              <a href="/contact">Contact {subsidiary.name}</a>
+                            </Button>
+                            
+                            <Button asChild className={`bg-fixity-${subsidiary.color} hover:bg-fixity-${subsidiary.color}/90 w-full transition-all`}
+                              style={{
+                                boxShadow: `0 0 15px -5px ${getActiveColor(subsidiary.id)}`
+                              }}
+                            >
+                              <a href={subsidiary.website} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                                Visit Website <ExternalLink className="ml-1.5 h-4 w-4" />
+                              </a>
+                            </Button>
+                          </div>
                         </div>
                       </div>
                     </div>

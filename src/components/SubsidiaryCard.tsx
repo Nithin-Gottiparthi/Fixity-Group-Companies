@@ -31,7 +31,7 @@ const SubsidiaryCard = ({ name, description, color, website, logo }: SubsidiaryP
   
   return (
     <Card 
-      className="overflow-hidden transition-all duration-300 h-full flex flex-col group"
+      className={`overflow-hidden transition-all duration-300 h-full flex flex-col group card-${color}`}
       style={{ 
         transition: "box-shadow 0.3s ease-in-out",
       }}
@@ -54,7 +54,7 @@ const SubsidiaryCard = ({ name, description, color, website, logo }: SubsidiaryP
       <CardContent className="flex-grow">
         <CardDescription className="text-sm text-gray-600">{description}</CardDescription>
       </CardContent>
-      <CardFooter className="pt-2">
+      <CardFooter className="pt-2 flex justify-between items-center">
         <a 
           href={website} 
           target="_blank" 
@@ -63,6 +63,19 @@ const SubsidiaryCard = ({ name, description, color, website, logo }: SubsidiaryP
         >
           Visit Website <ExternalLink className="ml-1 h-4 w-4" />
         </a>
+        
+        <Button 
+          asChild 
+          size="sm" 
+          variant="outline"
+          className={`border-fixity-${color} text-fixity-${color} hover:bg-fixity-${color}/5`}
+          style={{ 
+            boxShadow: `0 0 10px -5px ${hoverColor}70`,
+            transition: "all 0.3s ease"
+          }}
+        >
+          <a href="/contact">Contact Us</a>
+        </Button>
       </CardFooter>
 
       {/* Add custom hover styles as inline styles */}
