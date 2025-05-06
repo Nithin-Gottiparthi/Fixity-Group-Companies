@@ -84,10 +84,10 @@ const Index = () => {
               <div className="w-full md:w-1/2">
                 <div className="aspect-video bg-gradient-to-br from-gray-200 to-gray-100 rounded-xl flex items-center justify-center">
                   <img
-                    src="/images/Fixity Group.jpg"
+                    src="/images/Home.png"
                     alt="Fixity Group"
                     className="object-cover w-full h-full"
-                    style={{ width: "100%", height: "100%"}}
+                    style={{ width: "100%", height: "100%", borderRadius: 10 }}
                   />
                 </div>
               </div>

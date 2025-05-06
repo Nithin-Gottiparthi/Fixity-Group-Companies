@@ -36,14 +36,14 @@ const HeroSection = () => {
         
         <div className="mt-10 md:mt-0 md:w-2/5">
           <div className="relative">
-            {/* <img
+            <img
               src="/images/fixity-group-lyt.png"
               alt="Fixity Group Companies"
-              className="rounded-lg shadow-2xl object-cover w-full h-auto"
+              className="rounded-lg  object-cover w-full h-auto"
             />
-            <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-fixity-secondary rounded-full flex items-center justify-center">
+            <div className="absolute -bottom-9 -right-9 w-16 h-16 bg-fixity-secondary rounded-full flex items-center justify-center">
               <span className="text-fixity-primary font-bold"></span>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>

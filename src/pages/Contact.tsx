@@ -10,11 +10,22 @@ const Contact = () => {
       <Navbar />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="py-16 md:py-24 bg-fixity-primary text-white">
-          <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <section className="relative bg-fixity-primary text-white">
+          {/* Background Image */}
+          <img
+            src="/images/contact-us-bg.jpg"
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover z-0"
+          />
+
+          {/* Overlay with reduced opacity */}
+          <div className="absolute inset-0 bg-black opacity-10 z-10"></div>
+
+          {/* Text Content */}
+          <div className="relative z-20 max-w-7xl mx-auto px-4 md:px-8 py-24">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">Get in Touch</h1>
-              <p className="text-lg text-gray-200 mb-8">
+              <p className="text-lg text-grey-200 mb-8 font-bold">
                 Have questions about Fixity Group or any of our subsidiaries?
                 We'd love to hear from you and help address your inquiries.
               </p>
