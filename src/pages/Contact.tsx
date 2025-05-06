@@ -15,7 +15,7 @@ const Contact = () => {
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">Get in Touch</h1>
               <p className="text-lg text-gray-200 mb-8">
-                Have questions about Fixity Group or any of our subsidiaries? 
+                Have questions about Fixity Group or any of our subsidiaries?
                 We'd love to hear from you and help address your inquiries.
               </p>
             </div>
@@ -31,25 +31,25 @@ const Contact = () => {
                 <div>
                   <h2 className="text-2xl font-bold text-fixity-primary mb-6">Contact Information</h2>
                   <div className="space-y-6">
-                    <ContactItem 
-                      icon={MapPin} 
-                      title="Headquarters Address" 
-                      details={["123 Business Street", "Tech Park, Business City", "State, Country 12345"]} 
+                    <ContactItem
+                      icon={MapPin}
+                      title="Headquarters Address"
+                      details={["3333 Warrenville Road, Suite #200 Lisle, Illinois 60532 USA."]}
                     />
-                    <ContactItem 
-                      icon={Phone} 
-                      title="Phone Numbers" 
-                      details={["+1 (555) 123-4567", "+1 (555) 987-6543"]} 
+                    <ContactItem
+                      icon={Phone}
+                      title="Phone Numbers"
+                      details={["+1 (555) 123-4567", "+1 (555) 987-6543"]}
                     />
-                    <ContactItem 
-                      icon={Mail} 
-                      title="Email Addresses" 
-                      details={["info@fixitygroup.com", "support@fixitygroup.com"]} 
+                    <ContactItem
+                      icon={Mail}
+                      title="Email Addresses"
+                      details={["info@fixitygroup.com", "support@fixitygroup.com"]}
                     />
-                    <ContactItem 
-                      icon={Clock} 
-                      title="Business Hours" 
-                      details={["Monday - Friday: 9am - 6pm", "Saturday: 10am - 2pm", "Sunday: Closed"]} 
+                    <ContactItem
+                      icon={Clock}
+                      title="Business Hours"
+                      details={["Monday - Friday: 9am - 6pm", "Saturday & Sunday: Closed"]}
                     />
                   </div>
                 </div>
@@ -81,35 +81,42 @@ const Contact = () => {
         <section className="py-16 md:py-20 bg-fixity-primary/5">
           <div className="max-w-7xl mx-auto px-4 md:px-8">
             <h2 className="text-2xl font-bold text-fixity-primary mb-8 text-center">Find Us</h2>
-            <div className="h-80 bg-gray-200 rounded-xl">
-              {/* Map placeholder - in a real application, you would embed a Google Map or other map provider */}
-              <div className="w-full h-full flex items-center justify-center">
-                <p className="text-gray-500 text-lg">Interactive Map Would Be Embedded Here</p>
-              </div>
+            <div className="h-80 bg-gray-200 rounded-xl overflow-hidden">
+              <iframe
+                title="Hyderabad Location"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15224.4563184893!2d78.474061!3d17.385044!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb973f4f1f3075%3A0x6d00faed5e3b6c7e!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1714918423893!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full border-0"
+              ></iframe>
             </div>
           </div>
         </section>
+
+
 
         {/* FAQ Section */}
         <section className="py-16 md:py-20">
           <div className="max-w-7xl mx-auto px-4 md:px-8">
             <h2 className="text-2xl font-bold text-fixity-primary mb-8 text-center">Frequently Asked Questions</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <FaqItem 
-                question="How can I partner with Fixity Group?" 
-                answer="We're always open to exploring strategic partnerships. Please reach out through our contact form with details about your organization and partnership interests." 
+              <FaqItem
+                question="How can I partner with Fixity Group?"
+                answer="We're always open to exploring strategic partnerships. Please reach out through our contact form with details about your organization and partnership interests."
               />
-              <FaqItem 
-                question="Are there job opportunities across Fixity Group companies?" 
-                answer="Yes, we regularly have openings across our subsidiaries. Please visit the careers section of the specific subsidiary you're interested in for current opportunities." 
+              <FaqItem
+                question="Are there job opportunities across Fixity Group companies?"
+                answer="Yes, we regularly have openings across our subsidiaries. Please visit the careers section of the specific subsidiary you're interested in for current opportunities."
               />
-              <FaqItem 
-                question="How do the different Fixity Group companies work together?" 
-                answer="Our subsidiaries maintain their operational independence while collaborating on projects and initiatives that benefit from cross-industry expertise and shared resources." 
+              <FaqItem
+                question="How do the different Fixity Group companies work together?"
+                answer="Our subsidiaries maintain their operational independence while collaborating on projects and initiatives that benefit from cross-industry expertise and shared resources."
               />
-              <FaqItem 
-                question="Can I get services from multiple Fixity Group companies?" 
-                answer="Absolutely! Many of our clients benefit from integrated solutions that leverage the capabilities of multiple companies within our group. Contact us to discuss your needs." 
+              <FaqItem
+                question="Can I get services from multiple Fixity Group companies?"
+                answer="Absolutely! Many of our clients benefit from integrated solutions that leverage the capabilities of multiple companies within our group. Contact us to discuss your needs."
               />
             </div>
           </div>

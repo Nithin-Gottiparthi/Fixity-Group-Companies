@@ -24,7 +24,7 @@ const subsidiaries = [
       "Developed a custom ERP solution for a manufacturing company increasing efficiency by 25%",
       "Implemented cybersecurity framework for healthcare provider protecting sensitive patient data"
     ],
-    website: "#"
+    website: "https://fixitytech.com"
   },
   {
     id: "fixity-edx",
@@ -44,7 +44,7 @@ const subsidiaries = [
       "Developed custom corporate training platform reducing training time by 40%",
       "Created adaptive learning system improving student performance by 28%"
     ],
-    website: "#"
+    website: "https://fixityedx.com"
   },
   {
     id: "fixity-learnpad",
@@ -64,7 +64,7 @@ const subsidiaries = [
       "Developed language learning app with 2 million active users",
       "Created special education tools improving engagement for students with diverse learning needs"
     ],
-    website: "#"
+    website: "https://fixitylearn.com"
   },
   {
     id: "fixity-green",
@@ -84,7 +84,7 @@ const subsidiaries = [
       "Designed waste management system for municipality reducing landfill waste by 60%",
       "Provided green building consultation for corporate headquarters achieving LEED Platinum certification"
     ],
-    website: "#"
+    website: "https://fixitygreen.com"
   },
   {
     id: "liberty-hospitals",
@@ -104,7 +104,7 @@ const subsidiaries = [
       "Implemented AI-assisted diagnostic system improving early detection rates by 40%",
       "Created integrated patient care system reducing readmission rates by 25%"
     ],
-    website: "#"
+    website: "https://jslibertyhospitals.com"
   },
   {
     id: "shri-dhanvantri-vidyapeetam",

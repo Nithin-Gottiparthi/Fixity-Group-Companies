@@ -17,7 +17,13 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <div className="font-bold text-2xl text-fixity-primary">
-            FIXITY <span className="text-fixity-secondary">GROUP</span>
+            <img
+              src="/images/Fixity Group.jpg"
+              alt="Fixity Group"
+              style={{ width: "85px", height: "55px" }}
+
+            />
+            {/* FIXITY <span className="text-fixity-secondary">GROUP</span> */}
           </div>
         </Link>
 
@@ -65,7 +71,7 @@ const NavLinks = ({ className }: NavLinksProps) => (
       About Us
     </Link>
     <Link to="/subsidiaries" className="hover:text-fixity-secondary transition-colors">
-      Subsidiaries
+      Our Subsidiaries
     </Link>
   </div>
 );

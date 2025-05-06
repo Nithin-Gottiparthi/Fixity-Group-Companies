@@ -10,10 +10,16 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="space-y-4">
             <h3 className="text-xl font-bold">
-              FIXITY <span className="text-fixity-secondary">GROUP</span>
+              {/* FIXITY <span className="text-fixity-secondary">GROUP</span> */}
+              <img
+                src= "/images/fixity-group-lyt.png"
+                alt="Fixity Group"
+                style={{ width: "90px", height: "60px" }}
+
+              />
             </h3>
             <p className="text-gray-300 max-w-xs">
-              Unifying excellence across technology, education, healthcare, 
+              Unifying excellence across technology, education, healthcare,
               and sustainability sectors.
             </p>
             <div className="flex space-x-4">
@@ -43,7 +49,7 @@ const Footer = () => {
               <FooterLink to="/subsidiaries">Fixity EDX</FooterLink>
               <FooterLink to="/subsidiaries">Fixity Learnpad</FooterLink>
               <FooterLink to="/subsidiaries">Fixity Green</FooterLink>
-              <FooterLink to="/subsidiaries">Liberty Hospitals</FooterLink>
+              <FooterLink to="/subsidiaries">Jayasree Liberty Hospitals</FooterLink>
               <FooterLink to="/subsidiaries">Shri Dhanvantri Vidyapeetam</FooterLink>
             </div>
           </div>
@@ -54,7 +60,7 @@ const Footer = () => {
             <div className="flex flex-col space-y-3">
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-fixity-secondary shrink-0 mt-0.5" />
-                <span>123 Business Street, Tech Park, Business City, 12345</span>
+                <span>3333 Warrenville Road, Suite #200 Lisle, Illinois 60532 USA.</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-fixity-secondary shrink-0" />

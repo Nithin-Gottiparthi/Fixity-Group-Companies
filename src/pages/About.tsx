@@ -28,16 +28,16 @@ const About = () => {
               <div className="w-full md:w-1/2 space-y-6">
                 <h2 className="text-3xl md:text-4xl font-bold text-fixity-primary">Our Story</h2>
                 <p className="text-gray-600">
-                  Fixity Group was founded with a vision to create a synergistic ecosystem of companies that excel in their 
+                  Fixity Group was founded with a vision to create a synergistic ecosystem of companies that excel in their
                   respective industries while sharing knowledge, resources, and a common set of values.
                 </p>
                 <p className="text-gray-600">
-                  What began as a single technology company has evolved into a diverse portfolio spanning technology, 
-                  education, healthcare, and sustainability. Through strategic growth and acquisitions, 
+                  What began as a single technology company has evolved into a diverse portfolio spanning technology,
+                  education, healthcare, and sustainability. Through strategic growth and acquisitions,
                   we've assembled a family of companies that complement and strengthen each other.
                 </p>
                 <p className="text-gray-600">
-                  Today, Fixity Group represents a commitment to excellence across multiple sectors, delivering 
+                  Today, Fixity Group represents a commitment to excellence across multiple sectors, delivering
                   innovative solutions that address complex challenges and create meaningful impact.
                 </p>
               </div>
@@ -46,6 +46,47 @@ const About = () => {
                   {/* Placeholder for company timeline image */}
                   <div className="text-2xl font-bold text-fixity-primary/20">COMPANY TIMELINE</div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* About Us Section */}
+        <section className="py-16 md:py-24 bg-fixity-primary/5">
+          <div className="max-w-7xl mx-auto px-4 md:px-8">
+            <div className="flex flex-col md:flex-row items-center gap-12">
+              <div className="w-full md:w-1/2">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="aspect-square bg-fixity-tech/20 rounded-lg"></div>
+                  <div className="aspect-square bg-fixity-edx/20 rounded-lg"></div>
+                  <div className="aspect-square bg-fixity-learnpad/20 rounded-lg"></div>
+                  <div className="aspect-square bg-fixity-green/20 rounded-lg"></div>
+                </div>
+              </div>
+              <div className="w-full md:w-1/2 space-y-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-fixity-primary">
+                  Who We Are
+                </h2>
+                <p className="text-gray-600">
+                  At Fixity Group, we believe in the power of collaboration and excellence.
+                  Our diverse portfolio of companies shares a common purpose: to innovate, elevate standards,
+                  and create meaningful impact in their respective industries.
+                </p>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <h3 className="text-xl font-bold text-fixity-primary">Our Mission</h3>
+                    <p className="text-gray-600">To unite diverse expertise under one vision, delivering exceptional value and driving positive change.</p>
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="text-xl font-bold text-fixity-primary">Our Vision</h3>
+                    <p className="text-gray-600">To be a global leader in creating innovative solutions that improve lives and transform industries.</p>
+                  </div>
+                </div>
+                <Button asChild className="bg-fixity-primary hover:bg-fixity-primary/90">
+                  <Link to="/Subsidiaries">
+                    Explore Our Subsidiaries
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>
@@ -60,7 +101,7 @@ const About = () => {
                 Guided by strong principles and a clear direction, we strive to make a positive impact in everything we do.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
                 <div className="w-16 h-16 bg-fixity-primary/10 rounded-full flex items-center justify-center mb-6">
@@ -89,7 +130,7 @@ const About = () => {
                   </li>
                 </ul>
               </div>
-              
+
               <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
                 <div className="w-16 h-16 bg-fixity-secondary/10 rounded-full flex items-center justify-center mb-6">
                   <div className="w-8 h-8 bg-fixity-secondary rounded-full"></div>
@@ -130,7 +171,7 @@ const About = () => {
                 Meet the team guiding Fixity Group's vision and strategy across our family of companies.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {[1, 2, 3, 4, 5, 6].map((index) => (
                 <div key={index} className="bg-white rounded-xl overflow-hidden shadow-sm">
@@ -157,7 +198,7 @@ const About = () => {
                 These principles guide everything we do across the Fixity Group of companies.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               <ValueCard title="Innovation" description="Constantly seeking new ideas and approaches to solve complex problems and create better solutions." />
               <ValueCard title="Excellence" description="Striving for the highest standards in everything we do, from product quality to customer service." />
