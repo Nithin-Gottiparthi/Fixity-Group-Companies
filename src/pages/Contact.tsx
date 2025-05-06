@@ -144,9 +144,9 @@ const Contact = () => {
         <section className="py-16 md:py-20 bg-fixity-primary/5">
           <div className="max-w-7xl mx-auto px-4 md:px-8">
             <h2 className="text-2xl font-bold text-fixity-primary mb-8 text-center">Find Us</h2>
-            
+
             {/* Main Map */}
-            <div className="h-80 bg-gray-200 rounded-xl overflow-hidden mb-12">
+            {/* <div className="h-80 bg-gray-200 rounded-xl overflow-hidden mb-12">
               <iframe
                 title="Hyderabad Location"
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15224.4563184893!2d78.474061!3d17.385044!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb973f4f1f3075%3A0x6d00faed5e3b6c7e!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1714918423893!5m2!1sen!2sin"
@@ -156,13 +156,13 @@ const Contact = () => {
                 referrerPolicy="no-referrer-when-downgrade"
                 className="w-full h-full border-0"
               ></iframe>
-            </div>
-            
+            </div> */}
+
             {/* Subsidiary Location Cards */}
-            <h3 className="text-xl font-bold text-fixity-primary mb-6 text-center">Our Subsidiary Locations</h3>
+            {/* <h3 className="text-xl font-bold text-fixity-primary mb-6 text-center">Our Subsidiary Locations</h3> */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {subsidiaryContacts.map((subsidiary, index) => (
-                <SubsidiaryLocationCard 
+                <SubsidiaryLocationCard
                   key={index}
                   name={subsidiary.name}
                   address={subsidiary.address}
@@ -246,9 +246,9 @@ const SubsidiaryLocationCard = ({ name, address, phone, email, color, logo }) =>
   };
 
   const subsidiaryColor = getColor(color);
-  
+
   return (
-    <div 
+    <div
       className="bg-white rounded-lg shadow-sm p-5 border border-gray-100 hover:shadow-md transition-shadow"
       style={{
         borderTop: `3px solid ${subsidiaryColor}`
@@ -260,7 +260,7 @@ const SubsidiaryLocationCard = ({ name, address, phone, email, color, logo }) =>
             <img src={logo} alt={`${name} logo`} className="w-full h-full object-contain" />
           </div>
         ) : (
-          <div 
+          <div
             className="w-10 h-10 rounded-md flex items-center justify-center text-white text-lg font-bold"
             style={{ backgroundColor: subsidiaryColor }}
           >
@@ -269,20 +269,20 @@ const SubsidiaryLocationCard = ({ name, address, phone, email, color, logo }) =>
         )}
         <h3 className="font-bold text-fixity-primary">{name}</h3>
       </div>
-      
+
       <div className="space-y-3 text-sm">
         <div className="flex items-start gap-2">
           <MapPin className="w-4 h-4 text-gray-500 mt-0.5 flex-shrink-0" />
           <span className="text-gray-600">{address}</span>
         </div>
-        
+
         <div className="flex items-center gap-2">
           <Phone className="w-4 h-4 text-gray-500" />
           <a href={`tel:${phone}`} className="text-gray-600 hover:text-fixity-primary hover:underline">
             {phone}
           </a>
         </div>
-        
+
         <div className="flex items-center gap-2">
           <Mail className="w-4 h-4 text-gray-500" />
           <a href={`mailto:${email}`} className="text-gray-600 hover:text-fixity-primary hover:underline">
