@@ -175,9 +175,9 @@ const About = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               <LeadershipCard 
-                name="Dr. Rajesh Kumar"
+                name="Vinay Velivela"
                 position="Chief Executive Officer"
-                description="With over 20 years in technology leadership, Dr. Kumar drives our strategic vision and oversees the entire Fixity Group ecosystem."
+                description="With over 20 years in technology leadership, Viny drives our strategic vision and oversees the entire Fixity Group ecosystem."
                 imageUrl="/images/ceo.png"
               />
               <LeadershipCard 
