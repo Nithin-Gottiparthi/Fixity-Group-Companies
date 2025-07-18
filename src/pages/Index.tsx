@@ -21,7 +21,7 @@ const subsidiaries: SubsidiaryProps[] = [
     logo: "/images/Fixityedx.jpg",
   },
   {
-    name: "Fixity Learnpad",
+    name: "Learning Pad",
     description: "Interactive learning tools and platforms for students and educational institutions.",
     color: "learnpad",
     website: "https://fixitylearn.com",
@@ -142,27 +142,26 @@ const Index = () => {
               </div>
               <div className="w-full md:w-1/2 space-y-6">
                 <h2 className="text-3xl md:text-4xl font-bold text-fixity-primary">
-                  CEO's Message
+                  Chairman's Message
                 </h2>
                 <p className="text-gray-600">
-                  At Fixity Group, we believe in the power of collaboration and excellence.
-                  Our diverse portfolio of companies shares a common purpose: to innovate, elevate standards,
-                  and create meaningful impact in their respective industries.
+                  <strong>Dear Valued Stakeholders,</strong><br />
+
+                  On behalf of Fixity Group of Companies, thank you for your continued support and partnership. We are proud to be recognized by Fortune 500 companies as a global leader in IT staffing and solutions, product development, and learning and development.
+
+                  Our commitment to excellence drives us to deliver exceptional service while building strong, trust-based relationships with our customers, employees, partners, and shareholders. We believe that investing in our people is key to our success, and we are dedicated to providing continuous learning and growth opportunities within a culture of innovation and collaboration.
+
+                  Your support is vital to our journey, and we are honored to have you with us. We look forward to continuing our successful partnership and delivering outstanding results together.
+
+                  Thank you for your trust in Fixity Group of Companies.
                 </p>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-bold text-fixity-primary">Our Mission</h3>
-                    <p className="text-gray-600">
-                      To unite diverse expertise under one vision, delivering exceptional value and driving positive change.
-                    </p>
-                  </div>
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-bold text-fixity-primary">Our Vision</h3>
-                    <p className="text-gray-600">
-                      To be a global leader in creating innovative solutions that improve lives and transform industries.
-                    </p>
-                  </div>
-                </div>
+                <p className="text-gray-600">
+                  Sincerely,
+                  <br />
+                  <strong>Vinay Velivela</strong>
+                  <br />
+                  Founder & Chairman, Fixity Group of Companies
+                </p>
                 <Button asChild className="bg-fixity-primary hover:bg-fixity-primary/90">
                   <Link to="/about">More About Us</Link>
                 </Button>

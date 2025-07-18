@@ -21,7 +21,7 @@ const Navbar = () => {
             <img
               src="/images/Fixity Group.jpg"
               alt="Fixity Group"
-              className="h-14 w-auto object-contain"
+              className="h-16 w-auto object-contain"
             />
           </div>
         </Link>
@@ -89,7 +89,7 @@ const NavLinks = ({ className, currentPath }: NavLinksProps) => (
         currentPath === "/subsidiaries" && "text-fixity-secondary font-bold"
       )}
     >
-      Our Subsidiaries
+      Our Entities
     </Link>
   </div>
 );
