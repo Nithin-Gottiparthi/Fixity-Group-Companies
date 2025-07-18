@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Subsidiaries from "./pages/Subsidiaries";
 import Contact from "./pages/Contact";
+import ShriDhanvantriVidyapeetam from "./pages/ShriDhanvantriVidyapeetam";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/subsidiaries" element={<Subsidiaries />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/shri-dhanvantri-vidyapeetam" element={<ShriDhanvantriVidyapeetam />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

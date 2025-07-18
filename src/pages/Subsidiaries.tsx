@@ -15,7 +15,7 @@ const subsidiaries = [
     longDesc: "Fixity Technologies is at the forefront of digital transformation, providing cutting-edge IT solutions, software development, and consulting services. With expertise in AI, cloud computing, cybersecurity, and enterprise software, we help businesses leverage technology to optimize operations, enhance customer experiences, and drive growth.",
     features: [
       "Custom Software Development",
-      "Cloud Migration & Management",
+      "Cloud Migration & Management", 
       "Cybersecurity Solutions",
       "AI & Machine Learning Integration",
       "IT Consulting & Strategy"
@@ -152,6 +152,19 @@ const Subsidiaries = () => {
     }
   };
 
+  // Get website URL for subsidiary
+  const getWebsiteUrl = (subsidiary: any) => {
+    if (subsidiary.id === "shri-dhanvantri-vidyapeetam") {
+      return "/shri-dhanvantri-vidyapeetam";
+    }
+    return subsidiary.website;
+  };
+
+  // Check if URL is internal
+  const isInternalUrl = (url: string) => {
+    return url.startsWith("/");
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -191,9 +204,6 @@ const Subsidiaries = () => {
             </div>
           </div>
         </section>
-
-
-
 
         {/* Subsidiaries Details */}
         <section className="py-16 md:py-20">
@@ -251,9 +261,15 @@ const Subsidiaries = () => {
                           asChild
                           className={`bg-fixity-${subsidiary.color} hover:bg-fixity-${subsidiary.color}/90`}
                         >
-                          <a href={subsidiary.website} target="_blank" rel="noopener noreferrer">
-                            Visit Website
-                          </a>
+                          {isInternalUrl(getWebsiteUrl(subsidiary)) ? (
+                            <a href={getWebsiteUrl(subsidiary)}>
+                              Visit Website
+                            </a>
+                          ) : (
+                            <a href={getWebsiteUrl(subsidiary)} target="_blank" rel="noopener noreferrer">
+                              Visit Website
+                            </a>
+                          )}
                         </Button>
                       </div>
 
@@ -290,7 +306,6 @@ const Subsidiaries = () => {
 
                     {/* Right column with image */}
                     <div className="lg:w-1/3">
-                      {/* <div className={`bg-fixity-${subsidiary.color}/10 p-6 rounded-xl h-full`}> */}
                       <div className={`aspect-square bg-fixity-${subsidiary.color}/20 rounded-lg mb-6 flex items-center justify-center overflow-hidden`}>
                         {subsidiary.logo ? (
                           <img
@@ -339,23 +354,36 @@ const Subsidiaries = () => {
                               transition: "box-shadow 0.3s ease-in-out",
                             }}
                           >
-                            <a
-                              href={subsidiary.website}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center justify-center group"
-                            >
-                              Visit Website <ExternalLink className="ml-1.5 h-4 w-4" />
-                              <style>
-                                {`.group:hover {
-                                    box-shadow: 0 0 15px -5px ${getActiveColor(subsidiary.id)};
-                                  }`}
-                              </style>
-                            </a>
+                            {isInternalUrl(getWebsiteUrl(subsidiary)) ? (
+                              <a
+                                href={getWebsiteUrl(subsidiary)}
+                                className="flex items-center justify-center group"
+                              >
+                                Visit Website <ExternalLink className="ml-1.5 h-4 w-4" />
+                                <style>
+                                  {`.group:hover {
+                                      box-shadow: 0 0 15px -5px ${getActiveColor(subsidiary.id)};
+                                    }`}
+                                </style>
+                              </a>
+                            ) : (
+                              <a
+                                href={getWebsiteUrl(subsidiary)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-center group"
+                              >
+                                Visit Website <ExternalLink className="ml-1.5 h-4 w-4" />
+                                <style>
+                                  {`.group:hover {
+                                      box-shadow: 0 0 15px -5px ${getActiveColor(subsidiary.id)};
+                                    }`}
+                                </style>
+                              </a>
+                            )}
                           </Button>
                         </div>
                       </div>
-                      {/* </div> */}
                     </div>
                   </div>
                 </TabsContent>
@@ -399,7 +427,6 @@ const Subsidiaries = () => {
             </div>
           </div>
         </section>
-
 
         {/* CTA Section */}
         <section className="py-16 md:py-20 bg-fixity-primary text-white">
