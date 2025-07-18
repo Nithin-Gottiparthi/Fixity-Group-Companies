@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import SubsidiaryCard, { SubsidiaryProps } from "@/components/SubsidiaryCard";
-import InteractivePartners from "@/components/InteractivePartners";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -83,8 +82,13 @@ const Index = () => {
                 </Button>
               </div>
               <div className="w-full md:w-1/2">
-                <div className="aspect-video bg-gradient-to-br from-gray-200 to-gray-100 rounded-xl flex items-center justify-center p-8">
-                  <InteractivePartners />
+                <div className="aspect-video bg-gradient-to-br from-gray-200 to-gray-100 rounded-xl flex items-center justify-center">
+                  <img
+                    src="/images/Home.png"
+                    alt="Fixity Group"
+                    className="object-cover w-full h-full"
+                    style={{ width: "100%", height: "100%", borderRadius: 10 }}
+                  />
                 </div>
               </div>
             </div>
